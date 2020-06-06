@@ -107,4 +107,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99891c7c5339564ab42a684b7d67fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPickup: {fileID: 0}
+  popUpUI: {fileID: 8624380399084139201, guid: 19530ba348b16204cbd9e24ddf36cc03, type: 3}

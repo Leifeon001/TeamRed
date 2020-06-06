@@ -7,16 +7,30 @@ public class ShipCollider : MonoBehaviour
 
     private Pickup playerPickup;
 
+    public PopUpUI popUpUI;
+    public bool turnOnTheUI = false;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            Debug.Log("Dropship Pickedup");
             playerPickup = other.GetComponent<Pickup>();
 
-            playerPickup.AddToCarriedDropShips();
+            if (!playerPickup.cantPickUpAnymore)
+            {
+                Debug.Log("Dropship Pickedup");
+                playerPickup.AddToCarriedDropShips();
 
-            Destroy(this.gameObject);
+                turnOnTheUI = false;
+
+                Destroy(this.gameObject);
+            }
+            else if (playerPickup.cantPickUpAnymore)
+            {
+                Debug.Log("MaxDropShipsReached");
+
+                turnOnTheUI = true;
+            }
         }
     }
     // Start is called before the first frame update
@@ -28,6 +42,6 @@ public class ShipCollider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
