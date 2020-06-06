@@ -108,8 +108,6 @@ public class BulletSpawner : MonoBehaviour
             isLaserActive = true;
 
             startLaserTimer = true;
-
-
         }
 
     }

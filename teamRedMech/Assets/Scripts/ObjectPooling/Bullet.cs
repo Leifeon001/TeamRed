@@ -17,8 +17,6 @@ public class Bullet : MonoBehaviour, IPooledObject
     public void Start()
     {
         destroyTime = timeToDestroy;
-
-
     }
 
     public void OnObjectSpawn()
@@ -28,7 +26,7 @@ public class Bullet : MonoBehaviour, IPooledObject
 
     public void Update()
     {
-        DestroyTimer();
+            DestroyTimer();
     }
 
     void DestroyTimer()
@@ -48,6 +46,7 @@ public class Bullet : MonoBehaviour, IPooledObject
          if (other.tag == ("Enemy"))
         {
             //Add Damage Here
+            bullet.SetActive(false);
         }
     }
 }
