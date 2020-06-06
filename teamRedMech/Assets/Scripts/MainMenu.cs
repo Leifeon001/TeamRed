@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     bool isOptOpen;
     public GameObject CredPanel;
     bool isCredOpen;
+    public float RotSpeed = 1.2f;
 
     public void Options() //click Options panel on/off
     {
@@ -59,6 +60,7 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Rotate skybox
+        RenderSettings.skybox.SetFloat("_Rotation", Time.time * RotSpeed);
     }
 }
