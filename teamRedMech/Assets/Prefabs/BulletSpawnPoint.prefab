@@ -51,3 +51,6 @@ MonoBehaviour:
   isUsingBullet2: 0
   isUsingBullet3: 0
   laser: {fileID: 0}
+  playerPickup: {fileID: 0}
+  pickupAmmount: 0
+  damageUpgradeCost: 1

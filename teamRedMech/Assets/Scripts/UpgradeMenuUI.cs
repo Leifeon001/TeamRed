@@ -9,6 +9,10 @@ public class UpgradeMenuUI : MonoBehaviour
 
     public GameObject upgradeMenu;
 
+    public Text damageText;
+
+    public BulletSpawner bulletSpawner;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +25,8 @@ public class UpgradeMenuUI : MonoBehaviour
     void Update()
     {
         ToggleUpgradeMenu();
+
+        DrawDamageCost();
     }
 
     public void ToggleUpgradeMenu()
@@ -37,5 +43,14 @@ public class UpgradeMenuUI : MonoBehaviour
             isMenuOn = false;
             Time.timeScale = 1f;
         }
+    }
+
+    public void DrawDamageCost()
+    {
+        if (!bulletSpawner.isUsingBullet3)
+            damageText.text = bulletSpawner.damageUpgradeCost.ToString();
+        else if (bulletSpawner.isUsingBullet3)
+            damageText.text = "Maxed!"; 
+
     }
 }

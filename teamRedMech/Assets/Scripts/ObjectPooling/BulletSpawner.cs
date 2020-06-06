@@ -26,6 +26,14 @@ public class BulletSpawner : MonoBehaviour
     public GameObject laser;
 
 
+    public Pickup playerPickup;
+
+    public int pickupAmmount;
+    public int damageUpgradeCost;
+
+
+    //Add pickupammo equals to playerPikcup & check if it is higher then the ammount needed to purchase the damage upgrade
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +56,11 @@ public class BulletSpawner : MonoBehaviour
         ShootProjectile();
         FireLaser();
         StartLaserTimer();
+    }
+
+    private void Update()
+    {
+        pickupAmmount = playerPickup.dropShipsSaved;
     }
 
     public void ShootProjectile()
@@ -124,19 +137,27 @@ public class BulletSpawner : MonoBehaviour
 
     public void ChangeBullet()
     {
-        if (isUsingBullet1 && !isUsingBullet2 && !isUsingBullet3)
+        if (isUsingBullet1 && !isUsingBullet2 && !isUsingBullet3 && pickupAmmount >= damageUpgradeCost)
         {
+            playerPickup.ReduceCarriedDropShips(damageUpgradeCost);
+
             isUsingBullet1 = false;
             isUsingBullet2 = true;
             isUsingBullet3 = false;
+
+            damageUpgradeCost++;
         }
-        else if (!isUsingBullet1 && isUsingBullet2 && !isUsingBullet3)
+        else if (!isUsingBullet1 && isUsingBullet2 && !isUsingBullet3 && pickupAmmount >= damageUpgradeCost)
         {
+            playerPickup.ReduceCarriedDropShips(damageUpgradeCost);
+
             isUsingBullet1 = false;
             isUsingBullet2 = false;
             isUsingBullet3 = true;
+
+            damageUpgradeCost++;
         }
-        else if (!isUsingBullet1 && !isUsingBullet2 && isUsingBullet3)
+        else if (!isUsingBullet1 && !isUsingBullet2 && isUsingBullet3 && pickupAmmount >= damageUpgradeCost)
         {
             return;
         }
