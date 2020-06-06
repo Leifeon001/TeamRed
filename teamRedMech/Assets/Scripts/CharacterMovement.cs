@@ -19,13 +19,13 @@ public class CharacterMovement : MonoBehaviour
 
     void CharacterMove()
     {
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition.y = 0;
+        //Vector3 mousePosition = Input.mousePosition;
+        //mousePosition.y = 0;
         forward = Input.GetAxis("Vertical");
         sideways = Input.GetAxis("Horizontal");
         Vector3 characterMovement = new Vector3(sideways, 0, forward);
         characterMovement *= speed;
         move.Move(characterMovement * Time.deltaTime);
-        player.LookAt(mousePosition);
+       // player.LookAt(mousePosition);
     }
 }

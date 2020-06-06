@@ -25,14 +25,10 @@ public class BulletSpawner : MonoBehaviour
 
     public GameObject laser;
 
-
     public Pickup playerPickup;
 
     public int pickupAmmount;
     public int damageUpgradeCost;
-
-
-    //Add pickupammo equals to playerPikcup & check if it is higher then the ammount needed to purchase the damage upgrade
 
     // Start is called before the first frame update
     void Start()
