@@ -48,5 +48,9 @@ public class Bullet : MonoBehaviour, IPooledObject
             //Add Damage Here
             bullet.SetActive(false);
         }
+        if (other.tag == ("Enviroment"))
+        {
+            bullet.SetActive(false);
+        }
     }
 }
