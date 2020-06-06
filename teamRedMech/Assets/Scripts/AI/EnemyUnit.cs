@@ -32,6 +32,10 @@ public class EnemyUnit : AIUnits
                     {
                         //Attack Target 
                         FaceTarget(Chase);
+                        if (shootTimer >= rate)
+                        {
+                            Attack();
+                        }
                     }
                 }
             }
@@ -60,5 +64,12 @@ public class EnemyUnit : AIUnits
             }
             
         }
+    }
+
+    public override void Attack()
+    {
+        base.Attack();
+        Debug.Log("Enemy Attack");
+        objectPooler.SpawnFromPool("EnemyBullet", FirePos.position, FirePos.rotation);
     }
 }

@@ -6,30 +6,35 @@ public class Health : MonoBehaviour
 {
     public int playerHealth;
     public int dropShipHealth;
-
-    // Start is called before the first frame update
-    void Start()
+    public int Shields;
+    public void CurrHealth()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "EnemyBullet" && this.tag == "Player")
+        if (Shields > 0)
         {
-            playerHealth--;
+            Shields--;
         }
-        else if (other.tag == "EnemyBullet" && this.tag == "DropShip")
+        else
         {
-            dropShipHealth--;
+            Debug.Log("health lost");
+            if (CompareTag("Player"))
+            {
+
+
+                playerHealth--;
+                if (playerHealth <= 0)
+                {
+                    Debug.Log("Player dead");
+                }
+
+            }
+            else if (CompareTag("DropShip"))
+            {
+                dropShipHealth--;
+                if (dropShipHealth <= 0)
+                {
+                    Debug.Log("Dropship dead");
+                }
+            }
         }
     }
 }

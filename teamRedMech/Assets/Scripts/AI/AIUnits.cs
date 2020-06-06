@@ -8,14 +8,16 @@ public class AIUnits : MonoBehaviour
     #region Stats
     [Header("Stats")]
     public float health;
-    public float damage;
     public float LookRadius;
     public float Atkzone;
     public float wander;
+    public Transform FirePos;
+    public float rate;
+    [HideInInspector] public float shootTimer;
     #endregion
     [HideInInspector] public bool Ally = false;
     [HideInInspector] public NavMeshAgent agent;
-  
+    [HideInInspector] public ObjectPooler objectPooler;
     public List<GameObject> ItemDrop;
     [HideInInspector] public List<GameObject> Enemies;
     Vector3 randPoint = new Vector3(0, 0, 0);
@@ -23,12 +25,14 @@ public class AIUnits : MonoBehaviour
     public virtual void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.stoppingDistance = Atkzone;
+        objectPooler = ObjectPooler.Instance;
     }
 
     // Update is called once per frame
     public virtual void Update()
     {
- 
+        shootTimer += Time.deltaTime;
     }
     public void EMove()
     {
@@ -49,7 +53,11 @@ public class AIUnits : MonoBehaviour
         Vector3 direction = (Hunt.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 7);
-        agent.SetDestination(Hunt.position);
+        agent.isStopped = true;
+    }
+    public virtual void Attack()
+    {       
+        shootTimer = 0;
     }
     public virtual void CurrHealth(float damage)
     {

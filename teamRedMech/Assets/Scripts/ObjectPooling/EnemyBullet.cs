@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour, IPooledObject
+public class EnemyBullet : MonoBehaviour, IPooledObject
 {
     public float speed = 20f;
 
@@ -38,18 +38,13 @@ public class Bullet : MonoBehaviour, IPooledObject
             destroyTime = timeToDestroy;
         }
     }
-
-
     public void OnTriggerEnter(Collider other)
-    {      
-        EnemyUnit Enemy = other.GetComponent<EnemyUnit>();
-        if (Enemy != null)
-        {
-            Enemy.CurrHealth(damage);
-        }       
-
-        if (other.tag == ("Enviroment"))
-        {
+    {
+        Debug.Log(other.name);
+        Health Ally = other.GetComponent<Health>();
+        if(Ally != null)
+        { 
+            Ally.CurrHealth();
             bullet.SetActive(false);
         }
     }
