@@ -19,6 +19,10 @@ public class BulletSpawner : MonoBehaviour
     private bool startLaserTimer;
     private bool isLaserActive;
 
+    public bool isUsingBullet1;
+    public bool isUsingBullet2;
+    public bool isUsingBullet3;
+
     public GameObject laser;
 
 
@@ -34,6 +38,8 @@ public class BulletSpawner : MonoBehaviour
         laser.SetActive(false);
 
         startLaserTimer = false;
+
+        isUsingBullet1 = true;
     }
 
     // Update is called once per frame
@@ -52,16 +58,34 @@ public class BulletSpawner : MonoBehaviour
 
             if (shootTimer >= rate)
             {
-                objectPooler.SpawnFromPool("Bullet", spawnPoint.position, spawnPoint.rotation);
-                objectPooler.SpawnFromPool("Bullet", otherSpawnPoint.position, otherSpawnPoint.rotation);
-                shootTimer = 0;
+
+                if (isUsingBullet1)
+                {
+                    objectPooler.SpawnFromPool("Bullet", spawnPoint.position, spawnPoint.rotation);
+                    objectPooler.SpawnFromPool("Bullet", otherSpawnPoint.position, otherSpawnPoint.rotation);
+                    shootTimer = 0;
+                }
+
+                if (isUsingBullet2)
+                {
+                    objectPooler.SpawnFromPool("Bullet2", spawnPoint.position, spawnPoint.rotation);
+                    objectPooler.SpawnFromPool("Bullet2", otherSpawnPoint.position, otherSpawnPoint.rotation);
+                    shootTimer = 0;
+                }
+
+                if (isUsingBullet3)
+                {
+                    objectPooler.SpawnFromPool("Bullet3", spawnPoint.position, spawnPoint.rotation);
+                    objectPooler.SpawnFromPool("Bullet3", otherSpawnPoint.position, otherSpawnPoint.rotation);
+                    shootTimer = 0;
+                }
             }
         }
     }
 
     public void FireLaser()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !laser.active)
+        if (Input.GetKeyDown(KeyCode.Space) && !laser.activeSelf && isUsingBullet3)
         {
             Debug.Log("Laser is Fireing");
 
@@ -96,5 +120,25 @@ public class BulletSpawner : MonoBehaviour
         laser.SetActive(false);
         laserTimer = laserTimerMax;
         startLaserTimer = false;
+    }
+
+    public void ChangeBullet()
+    {
+        if (isUsingBullet1 && !isUsingBullet2 && !isUsingBullet3)
+        {
+            isUsingBullet1 = false;
+            isUsingBullet2 = true;
+            isUsingBullet3 = false;
+        }
+        else if (!isUsingBullet1 && isUsingBullet2 && !isUsingBullet3)
+        {
+            isUsingBullet1 = false;
+            isUsingBullet2 = false;
+            isUsingBullet3 = true;
+        }
+        else if (!isUsingBullet1 && !isUsingBullet2 && isUsingBullet3)
+        {
+            return;
+        }
     }
 }

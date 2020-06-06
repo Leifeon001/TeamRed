@@ -44,5 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 3174741019184717849}
+  otherSpawnPoint: {fileID: 0}
   rate: 0.15
-  shootTimer: 0
+  laserTimerMax: 5
+  isUsingBullet1: 0
+  isUsingBullet2: 0
+  isUsingBullet3: 0
+  laser: {fileID: 0}
