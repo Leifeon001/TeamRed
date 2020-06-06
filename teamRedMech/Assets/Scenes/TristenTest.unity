@@ -292,6 +292,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &278176209 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5864483347775486575, guid: 85ed5e0b60d21df42a1eeb29a850b82b,
+    type: 3}
+  m_PrefabInstance: {fileID: 151548358}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &278176211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278176209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5e0e6696c4044a45ac4de40d9678551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
 --- !u!1 &1410419576
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,6 +411,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1284119284, guid: 3c4bbe48bcd381d42be1313541bcbace, type: 3}
+      propertyPath: m_BaseOffset
+      value: 2.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284119284, guid: 3c4bbe48bcd381d42be1313541bcbace, type: 3}
+      propertyPath: m_Height
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284119285, guid: 3c4bbe48bcd381d42be1313541bcbace, type: 3}
+      propertyPath: ItemDrop.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1284119285, guid: 3c4bbe48bcd381d42be1313541bcbace, type: 3}
       propertyPath: Speed
       value: 0.09
@@ -399,6 +430,18 @@ PrefabInstance:
     - target: {fileID: 1284119285, guid: 3c4bbe48bcd381d42be1313541bcbace, type: 3}
       propertyPath: wander
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284119285, guid: 3c4bbe48bcd381d42be1313541bcbace, type: 3}
+      propertyPath: ItemDrop.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284119285, guid: 3c4bbe48bcd381d42be1313541bcbace, type: 3}
+      propertyPath: ItemDrop.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284119285, guid: 3c4bbe48bcd381d42be1313541bcbace, type: 3}
+      propertyPath: ItemDrop.Array.data[2]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1490308207214463251, guid: 3c4bbe48bcd381d42be1313541bcbace,
         type: 3}
@@ -408,7 +451,7 @@ PrefabInstance:
     - target: {fileID: 1490308207214463251, guid: 3c4bbe48bcd381d42be1313541bcbace,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.7
+      value: 3.15
       objectReference: {fileID: 0}
     - target: {fileID: 1490308207214463251, guid: 3c4bbe48bcd381d42be1313541bcbace,
         type: 3}

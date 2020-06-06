@@ -11,12 +11,13 @@ public class AIUnits : MonoBehaviour
     public float damage;
     public float LookRadius;
     public float Atkzone;
-    public float Speed;
+    public float wander;
     #endregion
     [HideInInspector] public bool Ally = false;
     [HideInInspector] public NavMeshAgent agent;
-    public float wander;
-    public List<GameObject> Enemies;
+  
+    public List<GameObject> ItemDrop;
+    [HideInInspector] public List<GameObject> Enemies;
     Vector3 randPoint = new Vector3(0, 0, 0);
     // Start is called before the first frame update
     public virtual void Start()
@@ -50,12 +51,18 @@ public class AIUnits : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 7);
         agent.SetDestination(Hunt.position);
     }
-    public void CurrHealth(float damage)
+    public virtual void CurrHealth(float damage)
     {
         health -= damage;
         if(health <= 0)
         {
             Debug.Log("Unit " + gameObject + " has been killed");
+            if (ItemDrop.Count != 0)
+            {
+                Vector3 SpawnPoint = new Vector3(transform.position.x, 1.0f, transform.position.z);
+                Instantiate(ItemDrop[Random.Range(0, ItemDrop.Count)], SpawnPoint, transform.rotation);
+            }
+            Destroy(gameObject);
         }
     }
     public virtual void OnDrawGizmosSelected()
