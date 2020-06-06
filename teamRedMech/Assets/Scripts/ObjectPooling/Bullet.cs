@@ -9,6 +9,8 @@ public class Bullet : MonoBehaviour, IPooledObject
     public float timeToDestroy;
     private float destroyTime;
 
+    public float damage;
+
     public GameObject bullet;
     public Rigidbody rb;
 
@@ -40,4 +42,12 @@ public class Bullet : MonoBehaviour, IPooledObject
         }
     }
 
+
+    public void OnTriggerEnter(Collider other)
+    {
+         if (other.tag == ("Enemy"))
+        {
+            //Add Damage Here
+        }
+    }
 }

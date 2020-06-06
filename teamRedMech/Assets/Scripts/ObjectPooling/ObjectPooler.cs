@@ -27,7 +27,6 @@ public class ObjectPooler : MonoBehaviour
     public Dictionary<string, Queue<GameObject>> poolDictionary;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
