@@ -133,6 +133,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 5864483347551501837, guid: 85ed5e0b60d21df42a1eeb29a850b82b,
+        type: 3}
+      propertyPath: orthographic size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5864483347551501837, guid: 85ed5e0b60d21df42a1eeb29a850b82b,
+        type: 3}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5864483347775486574, guid: 85ed5e0b60d21df42a1eeb29a850b82b,
         type: 3}
       propertyPath: m_LocalPosition.x
