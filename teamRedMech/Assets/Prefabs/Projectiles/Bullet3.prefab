@@ -107,8 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5999f3f089e05842b40e3bbf49ac36f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  timeToDestroy: 1
+  speed: 40
+  timeToDestroy: 2
   damage: 15
   bullet: {fileID: 7543041797706448855}
   rb: {fileID: 2402474978041238165}

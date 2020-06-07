@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  timeToDestroy: 1
+  timeToDestroy: 2
   damage: 1
   bullet: {fileID: 5367998128995924251}
   rb: {fileID: 5367998128995924241}

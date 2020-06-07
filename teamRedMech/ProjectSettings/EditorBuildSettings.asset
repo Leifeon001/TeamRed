@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/KyleTest.unity
-    guid: d404c0675e6ad5b41a29805078ba6f0b
-  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 4a5a5b44782a7db4cb6f939e41de05ea
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: c7e682074873cf845bcf6298c212eafb
   m_configObjects: {}

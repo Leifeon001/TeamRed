@@ -6,13 +6,12 @@ public class CharacterMovement : MonoBehaviour
 {
     public Transform player;
     public CharacterController move;
-    public float speed = 1f;
+    public float speed;
     public float forward;
     public float sideways;
 
-
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && Cursor.lockState != CursorLockMode.Locked)
         {
@@ -21,8 +20,8 @@ public class CharacterMovement : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Space) && Cursor.lockState != CursorLockMode.None)
         {
             Cursor.lockState = CursorLockMode.None;
-        }
-        CharacterMove();
+        }       
+        CharacterMove();                    
     }
 
     void CharacterMove()
@@ -33,9 +32,9 @@ public class CharacterMovement : MonoBehaviour
         forward = Input.GetAxis("Vertical");
         sideways = Input.GetAxis("Horizontal");
         Vector3 characterMovement = new Vector3(0, 0, forward);
-        characterMovement = transform.TransformDirection(characterMovement);
-        characterMovement *= speed;
-        move.Move(characterMovement * Time.deltaTime);
+        characterMovement = transform.TransformDirection(characterMovement);       
+        characterMovement *= speed;       
+        move.Move(characterMovement * Time.deltaTime * speed);       
         transform.Rotate(0, sideways, 0);
         // player.LookAt(mousePosition);
     }
