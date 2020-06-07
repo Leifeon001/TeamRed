@@ -5,56 +5,45 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     // Start is called before the first frame update
-    
+
+    public float xMax;
+    public float xMin;
+    public float yMax;
+    public float yMin;
+    private float xPos;
+    private float yPos;
     public GameObject theEnemy;
     public GameObject Player;
-    public Vector3 spawnPoint;
-    
-    public float xPos, yPos;
+    public Collider col;
+    public int numberOfEnemies;
     public int enemyCount;
-    public bool accept;
-    
-    // Update is called once per frame
     void Update()
     {
-        SpawnPoint();
+       
+
+        StartCoroutine(EnemyDrop());
+        OnTriggerEnter(col);
     }
 
     IEnumerator EnemyDrop()
     {
-        while(enemyCount < 10)
+        while(enemyCount< numberOfEnemies)
         {
-            Instantiate(theEnemy, spawnPoint, Quaternion.identity);
+            xPos = Random.Range(xMin, xMax);
+            yPos = Random.Range(yMin, yMax);
+            Instantiate(theEnemy, new Vector3(xPos, Player.transform.position.y, yPos), Quaternion.identity);
             enemyCount++;
             yield return new WaitForSeconds(0.1f);
             
         }
-        
-
-        
-    }
-    void SpawnPoint()
+    }  
+    
+    private void OnTriggerEnter(Collider other)
     {
-        xPos = Random.Range(-10, 10);
-        yPos = Random.Range(-10, 10);
-        spawnPoint = Player.transform.position + new Vector3(xPos, 0, yPos);
-        accept = SpawnPointOutside(spawnPoint);
-        if (accept)
+        if(other.tag == "Enemy")
         {
-            StartCoroutine(EnemyDrop());
-        }
-    }
-    bool SpawnPointOutside(Vector3 spawnpPoint)
-    {
-        float x = spawnPoint.x;
-        float y = spawnPoint.z;
-        if(Mathf.Pow(x, 2) + Mathf.Pow(y, 2) <= 25f)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
+            Destroy(other.gameObject);
+            enemyCount--;
         }
     }
 }

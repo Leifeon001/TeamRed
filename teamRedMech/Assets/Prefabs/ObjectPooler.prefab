@@ -56,3 +56,7 @@ MonoBehaviour:
     prefab: {fileID: 7543041797706448855, guid: 7136aa53984352d4d813317a596a2a84,
       type: 3}
     size: 20
+  - tag: EnemyBullet
+    prefab: {fileID: 5367998128995924251, guid: 69a7c40aeefc07a48a6382220c3a3049,
+      type: 3}
+    size: 20
