@@ -506,6 +506,11 @@ PrefabInstance:
       propertyPath: laserBeam
       value: 
       objectReference: {fileID: 3721728801164642932}
+    - target: {fileID: 579985122577148590, guid: 73ea5d944ba49f749ae75e4735b385ae,
+        type: 3}
+      propertyPath: laserCDTimerMax
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 579985122577148591, guid: 73ea5d944ba49f749ae75e4735b385ae,
         type: 3}
       propertyPath: m_LocalPosition.x

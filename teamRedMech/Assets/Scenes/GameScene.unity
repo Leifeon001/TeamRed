@@ -412,6 +412,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f809e02f7857fab46b5cff9c00d9d455, type: 3}
+--- !u!1 &313499816 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2303766459063467446, guid: 6b4459efbed0a5744a157079e9c68631,
+    type: 3}
+  m_PrefabInstance: {fileID: 1249913543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &313499820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313499816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bad85532765d214aaea98c5a4419f7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 984631163}
 --- !u!114 &363874029 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 363874029, guid: 39a793eaa332abf43a461bd25f9d3b0c,
@@ -733,6 +752,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 9042771077998628582, guid: 1820c8323298b40ab82ff3ccf7fc948d, type: 3}
+--- !u!114 &984631163 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2303766457952768866, guid: 6b4459efbed0a5744a157079e9c68631,
+    type: 3}
+  m_PrefabInstance: {fileID: 1249913543}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1069427393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2098,6 +2129,16 @@ PrefabInstance:
       propertyPath: ammountOfShields
       value: 
       objectReference: {fileID: 1884155796}
+    - target: {fileID: 3078589922246038217, guid: 3211433b8d6f58f449cb1bfc3041aa60,
+        type: 3}
+      propertyPath: laserSlider
+      value: 
+      objectReference: {fileID: 313499820}
+    - target: {fileID: 3078589922246038217, guid: 3211433b8d6f58f449cb1bfc3041aa60,
+        type: 3}
+      propertyPath: laserCDTimerMax
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8924882881279349582, guid: 3211433b8d6f58f449cb1bfc3041aa60,
         type: 3}
       propertyPath: m_LocalPosition.x
