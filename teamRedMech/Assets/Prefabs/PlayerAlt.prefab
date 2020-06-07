@@ -216,6 +216,7 @@ MonoBehaviour:
   playerPickup: {fileID: 4360056181119151595}
   shieldUpgrade2: {fileID: 2071468827098014479}
   shieldUpgrade3: {fileID: 8491302201591447308}
+  Lives: []
 --- !u!114 &2113449924
 MonoBehaviour:
   m_ObjectHideFlags: 0
