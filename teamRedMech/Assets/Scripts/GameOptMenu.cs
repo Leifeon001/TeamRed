@@ -21,11 +21,13 @@ public class GameOptMenu : MonoBehaviour
             OptOpen = true;
             OptPanel.SetActive(true);
             Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
         }else if (Input.GetKeyDown(KeyCode.Escape)&& OptOpen == true)
         {
             OptOpen = false;
             OptPanel.SetActive(false);
             Time.timeScale = 1f;
+            Cursor.lockState = CursorLockMode.Locked;
 
         }
     }
