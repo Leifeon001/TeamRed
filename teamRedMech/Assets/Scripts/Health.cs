@@ -8,6 +8,13 @@ public class Health : MonoBehaviour
     public int dropShipHealth;
     public int Shields = 3;
     public bool Invincible;
+    int PMax;
+    int MaxShield;
+    public void Start()
+    {
+        PMax = playerHealth;
+        MaxShield = Shields;
+    }
     public void CurrHealth()
     {
         if (Invincible == false)
@@ -40,6 +47,11 @@ public class Health : MonoBehaviour
                 }
             }
         }
+    }
+    public void Heal()
+    {
+        playerHealth = PMax;
+        Shields = MaxShield;
     }
     private IEnumerator InvincibleTick()
     {
