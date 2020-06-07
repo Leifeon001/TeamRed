@@ -72,7 +72,7 @@ public class BulletSpawner : MonoBehaviour
 
                 if (isUsingBullet1)
                 {
-                    objectPooler.SpawnFromPool("Bullet", spawnPoint.position, Quaternion.identity);
+                    objectPooler.SpawnFromPool("Bullet", spawnPoint.position, spawnPoint.rotation);
                     objectPooler.SpawnFromPool("Bullet", otherSpawnPoint.position, otherSpawnPoint.rotation);
                     shootTimer = 0;
                 }
