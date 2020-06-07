@@ -568,7 +568,7 @@ GameObject:
   - component: {fileID: 1369211873}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Enviroment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -778,6 +778,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6182281355443785003, guid: 35b6a8a94c46946459cd570b7f06c04d,
         type: 3}
+    - target: {fileID: 1601978298091259083, guid: 85ed5e0b60d21df42a1eeb29a850b82b,
+        type: 3}
+      propertyPath: dropShipMax
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5864483347775486574, guid: 85ed5e0b60d21df42a1eeb29a850b82b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -854,7 +859,7 @@ GameObject:
   - component: {fileID: 1960763925}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Enviroment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1630,6 +1635,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3962724844009639427, guid: b32b0eb943e83ee4b81d75b817af063a,
+        type: 3}
+      propertyPath: pools.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 6815176909244260109, guid: d7dd2552b888a3741bc02c90cc7b0063,
+        type: 3}
+    - target: {fileID: 3962724844009639427, guid: b32b0eb943e83ee4b81d75b817af063a,
+        type: 3}
+      propertyPath: pools.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 1573807227939571563, guid: 09e5d2e4237aea14a928650fc549b05b,
+        type: 3}
+    - target: {fileID: 3962724844009639427, guid: b32b0eb943e83ee4b81d75b817af063a,
+        type: 3}
+      propertyPath: pools.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 8592992271678763199, guid: 18f3b69c7a57a0342985ad8b14c3524c,
+        type: 3}
     - target: {fileID: 3962724844009639452, guid: b32b0eb943e83ee4b81d75b817af063a,
         type: 3}
       propertyPath: m_Name
