@@ -69,7 +69,7 @@ public class UpgradeMenuUI : MonoBehaviour
             //Debug.Log("Welcome to the upgradebay!");
 
             popUp.SetActive(true);
-
+            Cursor.visible = true;
             canTurnOn = true;
         }
 
@@ -80,7 +80,7 @@ public class UpgradeMenuUI : MonoBehaviour
         if (other.tag == "UpgradeDock")
         {
             popUp.SetActive(false);
-
+            Cursor.visible = false;
             canTurnOn = false;
         }
 
