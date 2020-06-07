@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -25,10 +26,15 @@ public class Health : MonoBehaviour
     public GameObject shieldUpgrade2;
     public GameObject shieldUpgrade3;
 
+    public List<Image> Lives;
     public void Start()
     {
         PMax = playerHealth;
         MaxShield = Shields;
+        foreach (GameObject Lifes in GameObject.FindGameObjectsWithTag("Lives"))
+        {
+            Lives.Add(Lifes.GetComponent<Image>());
+        }
     }
 
     public void CurrHealth()
@@ -44,6 +50,7 @@ public class Health : MonoBehaviour
                 Debug.Log("health lost");
                 if (CompareTag("Player"))
                 {
+                    Lives[playerHealth].gameObject.SetActive(false);
                     playerHealth--;
                     if (playerHealth <= 0)
                     {
@@ -68,6 +75,10 @@ public class Health : MonoBehaviour
     public void Heal()
     {
         playerHealth = PMax;
+        for (int i = 0; i < Lives.Count; i++)
+        {
+            Lives[i].gameObject.SetActive(false);
+        }
         Shields = MaxShield;
     }
 

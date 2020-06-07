@@ -11,7 +11,7 @@ public class AIUnits : MonoBehaviour
     public float LookRadius;
     public float Atkzone;
     public float wander;
-    public Transform FirePos;
+    public List<Transform>FirePos;
     public float rate;
     [HideInInspector] public float shootTimer;
     #endregion

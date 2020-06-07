@@ -1103,6 +1103,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2303766457139976720, guid: 6b4459efbed0a5744a157079e9c68631,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lives
+      objectReference: {fileID: 0}
     - target: {fileID: 2303766457264158607, guid: 6b4459efbed0a5744a157079e9c68631,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1133,6 +1138,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2303766457264158608, guid: 6b4459efbed0a5744a157079e9c68631,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lives
+      objectReference: {fileID: 0}
     - target: {fileID: 2303766457574818688, guid: 6b4459efbed0a5744a157079e9c68631,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1162,6 +1172,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2303766457574818689, guid: 6b4459efbed0a5744a157079e9c68631,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lives
       objectReference: {fileID: 0}
     - target: {fileID: 2303766457648827276, guid: 6b4459efbed0a5744a157079e9c68631,
         type: 3}
@@ -1198,6 +1213,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2303766457836367333, guid: 6b4459efbed0a5744a157079e9c68631,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lives
+      objectReference: {fileID: 0}
     - target: {fileID: 2303766458302943388, guid: 6b4459efbed0a5744a157079e9c68631,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1228,6 +1248,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2303766458302943389, guid: 6b4459efbed0a5744a157079e9c68631,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lives
+      objectReference: {fileID: 0}
     - target: {fileID: 2303766458513853889, guid: 6b4459efbed0a5744a157079e9c68631,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1257,6 +1282,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2303766458513853890, guid: 6b4459efbed0a5744a157079e9c68631,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lives
       objectReference: {fileID: 0}
     - target: {fileID: 2303766458553691451, guid: 6b4459efbed0a5744a157079e9c68631,
         type: 3}

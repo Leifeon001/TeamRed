@@ -70,6 +70,9 @@ public class EnemyUnit : AIUnits
     {
         base.Attack();
         Debug.Log("Enemy Attack");
-        objectPooler.SpawnFromPool("EnemyBullet", FirePos.position, FirePos.rotation);
+        for (int i = 0; i < FirePos.Count; i++)
+        {
+            objectPooler.SpawnFromPool("EnemyBullet", FirePos[i].position, FirePos[i].rotation);
+        }        
     }
 }

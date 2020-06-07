@@ -9,6 +9,7 @@ TagManager:
   - Enviroment
   - EnemyBullet
   - UpgradeDock
+  - Lives
   layers:
   - Default
   - TransparentFX

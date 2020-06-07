@@ -72,7 +72,8 @@ MonoBehaviour:
   LookRadius: 40
   Atkzone: 30
   wander: 50
-  FirePos: {fileID: 2855973853605717326}
+  FirePos:
+  - {fileID: 2855973853605717326}
   rate: 1
   shootTimer: 0
   Ally: 0
