@@ -26,6 +26,8 @@ public class BulletSpawner : MonoBehaviour
     public GameObject laser;
 
     public Pickup playerPickup;
+    public PLaser laserSC;
+
 
     public int pickupAmmount;
     public int damageUpgradeCost;
@@ -70,7 +72,7 @@ public class BulletSpawner : MonoBehaviour
 
                 if (isUsingBullet1)
                 {
-                    objectPooler.SpawnFromPool("Bullet", spawnPoint.position, spawnPoint.rotation);
+                    objectPooler.SpawnFromPool("Bullet", spawnPoint.position, Quaternion.identity);
                     objectPooler.SpawnFromPool("Bullet", otherSpawnPoint.position, otherSpawnPoint.rotation);
                     shootTimer = 0;
                 }
@@ -98,7 +100,8 @@ public class BulletSpawner : MonoBehaviour
         {
             Debug.Log("Laser is Fireing");
 
-            laser.SetActive(true);
+            laserSC.StartDelay();
+
             laserTimer = laserTimerMax;
 
             isLaserActive = true;

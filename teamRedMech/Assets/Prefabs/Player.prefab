@@ -478,6 +478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: 3
   dropShipHealth: 0
+  Shields: 0
 --- !u!1 &5864483349083071121
 GameObject:
   m_ObjectHideFlags: 0
