@@ -46,6 +46,10 @@ public class BulletSpawner : MonoBehaviour
     public int pickupAmmount;
     public int damageUpgradeCost;
 
+    public AudioSource aSource;
+
+    public AudioClip gunShot;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -96,6 +100,7 @@ public class BulletSpawner : MonoBehaviour
                     objectPooler.SpawnFromPool("Bullet", spawnPoint.position, spawnPoint.rotation);
                     objectPooler.SpawnFromPool("Bullet", otherSpawnPoint.position, otherSpawnPoint.rotation);
                     shootTimer = 0;
+                    aSource.PlayOneShot(gunShot);
                 }
 
                 if (isUsingBullet2)
@@ -117,7 +122,7 @@ public class BulletSpawner : MonoBehaviour
 
     public void FireLaser()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !laser.activeSelf && isUsingBullet3 && !isLaserOnCooldown)
+        if (Input.GetKeyDown(KeyCode.E) && !laser.activeSelf && isUsingBullet3 && !isLaserOnCooldown)
         {
             Debug.Log("Laser is Fireing");
 

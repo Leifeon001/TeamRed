@@ -13,6 +13,10 @@ public class Pickup : MonoBehaviour
 
     public GameObject cosmeticDropShips;
 
+    public AudioSource aSource;
+    public AudioClip pickup;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +45,8 @@ public class Pickup : MonoBehaviour
         dropShipsSaved++;
 
         cosmeticDropShips.SetActive(true);
+
+        aSource.PlayOneShot(pickup);
     }
 
     public void ReduceCarriedDropShips(int ammount)

@@ -26,6 +26,10 @@ public class Health : MonoBehaviour
     public GameObject shieldUpgrade2;
     public GameObject shieldUpgrade3;
 
+    public AudioSource aSource;
+    public AudioClip explosion;
+
+
     public List<Image> Lives;
     public void Start()
     {
@@ -55,6 +59,8 @@ public class Health : MonoBehaviour
                     if (playerHealth <= 0)
                     {
                         Debug.Log("Player dead");
+
+                        aSource.PlayOneShot(explosion);
                     }
                     Invincible = true;
                     Shields = 3;
