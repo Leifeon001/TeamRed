@@ -22,6 +22,7 @@ public class CharacterMovement : MonoBehaviour
     public GameObject speedUpgrade2;
     public GameObject speedUpgrade3;
 
+
     // Update is called once per frame
     void Update()
     {

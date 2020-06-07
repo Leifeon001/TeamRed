@@ -12,6 +12,7 @@ public class ShipCollider : MonoBehaviour
 
     public GameObject thisIsMaxed;
 
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
