@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UpgradeMenuUI : MonoBehaviour
 {
-    public bool isMenuOn;
+    public bool ableToTurnOn = false;
 
     public GameObject upgradeMenu;
 
@@ -16,20 +16,18 @@ public class UpgradeMenuUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isMenuOn = false;
-
         upgradeMenu.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        ToggleUpgradeMenu();
+        //ToggleUpgradeMenu();
 
         DrawDamageCost();
     }
 
-    public void ToggleUpgradeMenu()
+    /*public void ToggleUpgradeMenu()
     {
         if(Input.GetKeyDown(KeyCode.I) && !isMenuOn)
         {
@@ -39,10 +37,24 @@ public class UpgradeMenuUI : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.I) && isMenuOn)
         {
-            upgradeMenu.SetActive(false);
+            
             isMenuOn = false;
             Time.timeScale = 1f;
         }
+    }*/
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "UpgradeTrigger")
+        {
+
+        }
+
+    }
+
+    public void TurnOffUpgradeMenu()
+    {
+       upgradeMenu.SetActive(false);
     }
 
     public void DrawDamageCost()

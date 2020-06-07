@@ -48,6 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9382ac82420be142a29816c4147487c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxedOutDropShips: {fileID: 1560975529388022018, guid: 02c3808c6a75ce142b81699d0bcf3846,
-    type: 3}
+  maxedOutDropShips: {fileID: 0}
+  timerDropShip: 0
   maxTimerDropShip: 20
+  turnOn: 0
+  startTimer: 0
