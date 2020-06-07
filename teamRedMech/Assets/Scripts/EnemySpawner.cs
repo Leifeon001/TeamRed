@@ -18,9 +18,7 @@ public class EnemySpawner : MonoBehaviour
     public int numberOfEnemies;
     public int enemyCount;
     void Update()
-    {
-       
-
+    {       
         StartCoroutine(EnemyDrop());
         OnTriggerEnter(col);
     }

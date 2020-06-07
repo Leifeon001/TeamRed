@@ -30,14 +30,18 @@ public class Health : MonoBehaviour
     public AudioClip explosion;
 
 
-    public List<Image> Lives;
+    public List<GameObject> Lives;
     public void Start()
     {
         PMax = playerHealth;
         MaxShield = Shields;
         foreach (GameObject Lifes in GameObject.FindGameObjectsWithTag("Lives"))
         {
-            Lives.Add(Lifes.GetComponent<Image>());
+            Lives.Add(Lifes);
+            for (int i = 0; i < Lives.Count; i++)
+            {
+                Lives[i].gameObject.SetActive(true);
+            }
         }
     }
 
@@ -54,7 +58,9 @@ public class Health : MonoBehaviour
                 Debug.Log("health lost");
                 if (CompareTag("Player"))
                 {
-                    Lives[playerHealth].gameObject.SetActive(false);
+                    Debug.Log(playerHealth);
+                    int temp = playerHealth - 1;
+                    Lives[temp].SetActive(false);
                     playerHealth--;
                     if (playerHealth <= 0)
                     {
@@ -83,7 +89,7 @@ public class Health : MonoBehaviour
         playerHealth = PMax;
         for (int i = 0; i < Lives.Count; i++)
         {
-            Lives[i].gameObject.SetActive(false);
+            Lives[i].gameObject.SetActive(true);
         }
         Shields = MaxShield;
     }
