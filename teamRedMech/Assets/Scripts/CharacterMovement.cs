@@ -26,14 +26,14 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && Cursor.lockState != CursorLockMode.Locked)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        else if (Input.GetKeyDown(KeyCode.Space) && Cursor.lockState != CursorLockMode.None)
-        {
-            Cursor.lockState = CursorLockMode.None;
-        }       
+        //if (Input.GetKeyDown(KeyCode.Space) && Cursor.lockState != CursorLockMode.Locked)
+        //{
+        //    Cursor.lockState = CursorLockMode.Locked;
+        //}
+        //else if (Input.GetKeyDown(KeyCode.Space) && Cursor.lockState != CursorLockMode.None)
+        //{
+        //    Cursor.lockState = CursorLockMode.None;
+        //}       
         CharacterMove();                    
     }
 

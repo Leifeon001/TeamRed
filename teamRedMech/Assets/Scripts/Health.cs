@@ -36,7 +36,10 @@ public class Health : MonoBehaviour
     public void Start()
     {
         EndScreen = GameObject.Find("End Screen");
-        EndScreen.SetActive(false);
+        if (EndScreen != null)
+        {
+            EndScreen.SetActive(false);
+        }
         Time.timeScale = 1.0f;
         PMax = playerHealth;
         MaxShield = Shields;
