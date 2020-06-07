@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -32,8 +31,12 @@ public class Health : MonoBehaviour
 
 
     public List<GameObject> Lives;
+    public GameObject EndScreen;
+
     public void Start()
     {
+        EndScreen = GameObject.Find("End Screen");
+        EndScreen.SetActive(false);
         PMax = playerHealth;
         MaxShield = Shields;
         foreach (GameObject Lifes in GameObject.FindGameObjectsWithTag("Lives"))
@@ -68,7 +71,7 @@ public class Health : MonoBehaviour
                         Debug.Log("Player dead");
 
                         aSource.PlayOneShot(explosion);
-                        SceneManager.LoadScene("MainMenu");
+                        EndScreen.SetActive(true);
                     }
                     Invincible = true;
                     Shields = 3;
