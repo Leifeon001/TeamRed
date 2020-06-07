@@ -81,6 +81,8 @@ public class Health : MonoBehaviour
                         aSource.PlayOneShot(explosion);
                         EndScreen.SetActive(true);
                         Time.timeScale = 0.0f;
+                        Cursor.visible = true;
+                        Cursor.lockState = CursorLockMode.None;
                     }
                     Invincible = true;
                     Shields = 3;

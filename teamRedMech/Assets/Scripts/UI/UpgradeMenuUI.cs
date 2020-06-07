@@ -70,6 +70,7 @@ public class UpgradeMenuUI : MonoBehaviour
 
             popUp.SetActive(true);
             Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             canTurnOn = true;
         }
 
@@ -81,6 +82,7 @@ public class UpgradeMenuUI : MonoBehaviour
         {
             popUp.SetActive(false);
             Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
             canTurnOn = false;
         }
 
@@ -88,11 +90,13 @@ public class UpgradeMenuUI : MonoBehaviour
 
     public void TurnOnUpgradeMenu()
     {
+        //Cursor.visible = true;
         upgradeMenu.SetActive(true);
     }
 
     public void TurnOffUpgradeMenu()
     {
+        //Cursor.visible = false;
         upgradeMenu.SetActive(false);
     }
 
