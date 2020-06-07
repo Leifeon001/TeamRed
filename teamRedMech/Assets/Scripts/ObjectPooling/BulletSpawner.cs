@@ -19,9 +19,14 @@ public class BulletSpawner : MonoBehaviour
     public float laserDelayTimerMax;
     public float laserDelayTimer;
 
+    public float laserCDTimerMax;
+    public float laserCDTimer;
+
     private bool startLaserTimer;
     private bool isLaserActive;
     private bool isLaserDelayTimerStarted;
+
+    private bool isLaserOnCooldown = false;
 
     public bool isUsingBullet1;
     public bool isUsingBullet2;
@@ -36,6 +41,7 @@ public class BulletSpawner : MonoBehaviour
     public PLaser laserSC;
 
     public ParticleSystem laserBeam;
+    public LaserSlider laserSlider;
 
     public int pickupAmmount;
     public int damageUpgradeCost;
@@ -57,6 +63,8 @@ public class BulletSpawner : MonoBehaviour
 
         damageUpgrade2.SetActive(false);
         damageUpgrade3.SetActive(false);
+
+        laserSlider.SetLaserMax(laserCDTimerMax);
     }
 
     // Update is called once per frame
@@ -66,6 +74,7 @@ public class BulletSpawner : MonoBehaviour
         FireLaser();
         StartLaserTimer();
         StartLaserDelayTimer();
+        StartLaserCooldown();
     }
 
     private void Update()
@@ -108,7 +117,7 @@ public class BulletSpawner : MonoBehaviour
 
     public void FireLaser()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !laser.activeSelf && isUsingBullet3)
+        if (Input.GetKeyDown(KeyCode.Space) && !laser.activeSelf && isUsingBullet3 && !isLaserOnCooldown)
         {
             Debug.Log("Laser is Fireing");
 
@@ -120,8 +129,6 @@ public class BulletSpawner : MonoBehaviour
             laserTimer = laserTimerMax;
 
             isLaserDelayTimerStarted = true;
-
-
         }
 
     }
@@ -156,6 +163,21 @@ public class BulletSpawner : MonoBehaviour
         }
     }
 
+    public void StartLaserCooldown()
+    {
+        if(isLaserOnCooldown)
+        {
+            laserCDTimer -= Time.deltaTime;
+
+            laserSlider.SetLaser(laserCDTimer);
+
+            if (laserCDTimer <= 0)
+            {
+                isLaserOnCooldown = false;
+            }
+        }
+    }
+
     public void TurnOnLaser()
     {
         laser.SetActive(true);
@@ -167,6 +189,9 @@ public class BulletSpawner : MonoBehaviour
         laserTimer = laserTimerMax;
         laserDelayTimer = laserDelayTimerMax;
         startLaserTimer = false;
+
+        isLaserOnCooldown = true;
+        laserCDTimer = laserCDTimerMax;
     }
 
     public void ChangeBullet()

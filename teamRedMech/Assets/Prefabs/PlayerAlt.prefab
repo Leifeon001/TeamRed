@@ -446,6 +446,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerScripts
       objectReference: {fileID: 0}
+    - target: {fileID: 579985121261421955, guid: 73ea5d944ba49f749ae75e4735b385ae,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 579985121261421966, guid: 73ea5d944ba49f749ae75e4735b385ae,
         type: 3}
       propertyPath: maxDelayTime
@@ -736,7 +741,12 @@ PrefabInstance:
     - target: {fileID: 512918007082831713, guid: 3af42c6d33956d14e9c439d598f8e9f4,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 794889942511529803, guid: 3af42c6d33956d14e9c439d598f8e9f4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3836243063882696281, guid: 3af42c6d33956d14e9c439d598f8e9f4,
         type: 3}
@@ -746,27 +756,27 @@ PrefabInstance:
     - target: {fileID: 4520624470690181062, guid: 3af42c6d33956d14e9c439d598f8e9f4,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5836306172123151782, guid: 3af42c6d33956d14e9c439d598f8e9f4,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6339758872516127094, guid: 3af42c6d33956d14e9c439d598f8e9f4,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7959619231471080290, guid: 3af42c6d33956d14e9c439d598f8e9f4,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8034619013659797017, guid: 3af42c6d33956d14e9c439d598f8e9f4,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3af42c6d33956d14e9c439d598f8e9f4, type: 3}
