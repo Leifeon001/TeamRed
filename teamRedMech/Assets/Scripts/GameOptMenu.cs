@@ -31,4 +31,9 @@ public class GameOptMenu : MonoBehaviour
 
         }
     }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
