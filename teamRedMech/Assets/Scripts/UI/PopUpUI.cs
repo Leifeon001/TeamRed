@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PopUpUI : MonoBehaviour
 {
-    public GameObject maxedOutDropShips;
+    //public GameObject maxedOutDropShips;
 
     public float timerDropShip;
     public float maxTimerDropShip;
@@ -15,7 +15,7 @@ public class PopUpUI : MonoBehaviour
 
     private void Start()
     {
-        maxedOutDropShips.SetActive(false);
+        //maxedOutDropShips.SetActive(false);
 
         turnOn = false;
 
@@ -28,10 +28,10 @@ public class PopUpUI : MonoBehaviour
         TurnOffMaxedOutPopup();
         TurnOnMaxedOutPopup();
 
-        if (turnOn)
-            maxedOutDropShips.SetActive(true);
-        else
-            maxedOutDropShips.SetActive(false);
+        //if (turnOn)
+            //maxedOutDropShips.SetActive(true);
+        //else
+            //maxedOutDropShips.SetActive(false);
     }
 
     public void TurnOnMaxedOutPopup()
@@ -40,7 +40,7 @@ public class PopUpUI : MonoBehaviour
         if (turnOn == true)
         {
 
-            maxedOutDropShips.SetActive(true);
+            //maxedOutDropShips.SetActive(true);
 
             //timerDropShip = maxTimerDropShip;
             startTimer = true;
@@ -69,7 +69,7 @@ public class PopUpUI : MonoBehaviour
         {
             startTimer = false;
             turnOn = false;
-            maxedOutDropShips.SetActive(false);
+            //maxedOutDropShips.SetActive(false);
         }
     }
 }

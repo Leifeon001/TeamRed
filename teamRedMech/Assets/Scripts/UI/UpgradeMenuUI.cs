@@ -12,14 +12,14 @@ public class UpgradeMenuUI : MonoBehaviour
     public GameObject popUp;
 
     public Text damageText;
-
     public Text speedText;
-
     public Text shieldText;
+    public Text ammountOfShields;
 
     public BulletSpawner bulletSpawner;
     public CharacterMovement cMovement;
     public Health health;
+    public Pickup pickup;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +42,8 @@ public class UpgradeMenuUI : MonoBehaviour
         DrawSpeedCost();
 
         DrawShieldCost();
+
+        DrawAmmountOfShields();
     }
 
     public void ToggleUpgradeMenu()
@@ -114,10 +116,15 @@ public class UpgradeMenuUI : MonoBehaviour
 
     public void DrawShieldCost()
     {
-        if (!health.shieldUpgrade3)
+        if (!health.isUsingShield3)
             shieldText.text = health.shieldUpgradeCost.ToString();
-        else if (health.shieldUpgrade3)
-            shieldText.text = "Maxed!";
-
+        if (health.isUsingShield3)
+            shieldText.text = "Maxed";
     }
+
+    public void DrawAmmountOfShields()
+    {
+        ammountOfShields.text = pickup.dropShipsSaved.ToString();
+    }
+
 }

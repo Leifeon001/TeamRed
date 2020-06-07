@@ -64,6 +64,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popUpUI: {fileID: 8624380399084139201, guid: 19530ba348b16204cbd9e24ddf36cc03, type: 3}
   turnOnTheUI: 0
+  thisIsMaxed: {fileID: 366613524000133474, guid: 39a793eaa332abf43a461bd25f9d3b0c,
+    type: 3}
 --- !u!1 &5407318714284722411
 GameObject:
   m_ObjectHideFlags: 0

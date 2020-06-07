@@ -10,6 +10,8 @@ public class ShipCollider : MonoBehaviour
     public PopUpUI popUpUI;
     public bool turnOnTheUI = false;
 
+    public GameObject thisIsMaxed;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -21,7 +23,7 @@ public class ShipCollider : MonoBehaviour
                 Debug.Log("Dropship Pickedup");
                 playerPickup.AddToCarriedDropShips();
 
-                turnOnTheUI = false;
+                //turnOnTheUI = false;
 
                 Destroy(this.gameObject);
             }
@@ -29,19 +31,26 @@ public class ShipCollider : MonoBehaviour
             {
                 Debug.Log("MaxDropShipsReached");
 
-                turnOnTheUI = true;
+                ActivateTheUI();
+
+                //turnOnTheUI = true;
             }
         }
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    public void ActivateTheUI()
+    {
+        thisIsMaxed.SetActive(true);
     }
 }

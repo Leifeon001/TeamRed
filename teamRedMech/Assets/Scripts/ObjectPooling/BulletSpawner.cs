@@ -14,10 +14,14 @@ public class BulletSpawner : MonoBehaviour
     private float shootTimer;
 
     public float laserTimerMax;
-    private float laserTimer;
+    public float laserTimer;
+
+    public float laserDelayTimerMax;
+    public float laserDelayTimer;
 
     private bool startLaserTimer;
     private bool isLaserActive;
+    private bool isLaserDelayTimerStarted;
 
     public bool isUsingBullet1;
     public bool isUsingBullet2;
@@ -31,6 +35,7 @@ public class BulletSpawner : MonoBehaviour
     public Pickup playerPickup;
     public PLaser laserSC;
 
+    public ParticleSystem laserBeam;
 
     public int pickupAmmount;
     public int damageUpgradeCost;
@@ -60,6 +65,7 @@ public class BulletSpawner : MonoBehaviour
         ShootProjectile();
         FireLaser();
         StartLaserTimer();
+        StartLaserDelayTimer();
     }
 
     private void Update()
@@ -106,15 +112,34 @@ public class BulletSpawner : MonoBehaviour
         {
             Debug.Log("Laser is Fireing");
 
-            laserSC.StartDelay();
+
+            laserBeam.Play();
+
+            laserDelayTimer = laserDelayTimerMax;
 
             laserTimer = laserTimerMax;
 
-            isLaserActive = true;
+            isLaserDelayTimerStarted = true;
 
-            startLaserTimer = true;
+
         }
 
+    }
+
+    public void StartLaserDelayTimer()
+    {
+        if (isLaserDelayTimerStarted)
+        {
+            laserDelayTimer -= Time.deltaTime;
+
+            if (laserDelayTimer <= 0)
+            {
+
+                startLaserTimer = true;
+                TurnOnLaser();
+                isLaserDelayTimerStarted = false;
+            }
+        }
     }
 
     public void StartLaserTimer()
@@ -131,10 +156,16 @@ public class BulletSpawner : MonoBehaviour
         }
     }
 
+    public void TurnOnLaser()
+    {
+        laser.SetActive(true);
+    }
+
     public void TurnLaserOff()
     {
         laser.SetActive(false);
         laserTimer = laserTimerMax;
+        laserDelayTimer = laserDelayTimerMax;
         startLaserTimer = false;
     }
 
