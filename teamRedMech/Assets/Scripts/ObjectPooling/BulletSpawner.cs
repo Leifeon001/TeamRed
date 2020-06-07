@@ -108,6 +108,7 @@ public class BulletSpawner : MonoBehaviour
                     objectPooler.SpawnFromPool("Bullet2", spawnPoint.position, spawnPoint.rotation);
                     objectPooler.SpawnFromPool("Bullet2", otherSpawnPoint.position, otherSpawnPoint.rotation);
                     shootTimer = 0;
+                    aSource.PlayOneShot(gunShot);
                 }
 
                 if (isUsingBullet3)
@@ -115,6 +116,7 @@ public class BulletSpawner : MonoBehaviour
                     objectPooler.SpawnFromPool("Bullet3", spawnPoint.position, spawnPoint.rotation);
                     objectPooler.SpawnFromPool("Bullet3", otherSpawnPoint.position, otherSpawnPoint.rotation);
                     shootTimer = 0;
+                    aSource.PlayOneShot(gunShot);
                 }
             }
         }
