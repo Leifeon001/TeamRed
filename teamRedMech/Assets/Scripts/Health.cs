@@ -37,6 +37,7 @@ public class Health : MonoBehaviour
     {
         EndScreen = GameObject.Find("End Screen");
         EndScreen.SetActive(false);
+        Time.timeScale = 1.0f;
         PMax = playerHealth;
         MaxShield = Shields;
         foreach (GameObject Lifes in GameObject.FindGameObjectsWithTag("Lives"))
@@ -76,6 +77,7 @@ public class Health : MonoBehaviour
 
                         aSource.PlayOneShot(explosion);
                         EndScreen.SetActive(true);
+                        Time.timeScale = 0.0f;
                     }
                     Invincible = true;
                     Shields = 3;
