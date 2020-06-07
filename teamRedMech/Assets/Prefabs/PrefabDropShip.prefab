@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8203257725641534126}
   - component: {fileID: 3774965804939310402}
   - component: {fileID: 6643389360764608256}
+  - component: {fileID: 6445146238366856849}
   m_Layer: 0
   m_Name: PrefabDropShip
   m_TagString: Untagged
@@ -47,9 +48,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 189.74428
-  m_Height: 504.64282
+  m_Height: 2000
   m_Direction: 1
-  m_Center: {x: 0.5913849, y: 3.7545776, z: 0}
+  m_Center: {x: 0.5913849, y: 0, z: 0}
 --- !u!114 &6643389360764608256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +67,33 @@ MonoBehaviour:
   turnOnTheUI: 0
   thisIsMaxed: {fileID: 366613524000133474, guid: 39a793eaa332abf43a461bd25f9d3b0c,
     type: 3}
+--- !u!114 &6445146238366856849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5155648130783467709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0dbf88014e15784c9ea7c26a516c55e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 0
+  dropShipHealth: 1
+  Shields: 3
+  Invincible: 0
+  isUsingShield1: 1
+  isUsingShield2: 0
+  isUsingShield3: 0
+  shieldUpgradeCost: 0
+  bSpawn: {fileID: 0}
+  playerPickup: {fileID: 0}
+  shieldUpgrade2: {fileID: 0}
+  shieldUpgrade3: {fileID: 0}
+  aSource: {fileID: 0}
+  explosion: {fileID: 0}
+  Lives: []
 --- !u!1 &5407318714284722411
 GameObject:
   m_ObjectHideFlags: 0

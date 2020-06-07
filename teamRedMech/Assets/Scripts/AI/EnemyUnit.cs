@@ -12,7 +12,7 @@ public class EnemyUnit : AIUnits
         for (int i = 0; i < hitColliders.Length; i++)
         {
             //Debug.Log(hitColliders[i].name);
-            CharacterMovement Character = hitColliders[i].GetComponent<CharacterMovement>();
+            Health Character = hitColliders[i].GetComponent<Health>();
             if (Character != null && !Enemies.Contains(hitColliders[i].gameObject))
             {
                 Enemies.Add(hitColliders[i].gameObject);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -67,6 +68,7 @@ public class Health : MonoBehaviour
                         Debug.Log("Player dead");
 
                         aSource.PlayOneShot(explosion);
+                        SceneManager.LoadScene("MainMenu");
                     }
                     Invincible = true;
                     Shields = 3;
@@ -77,7 +79,8 @@ public class Health : MonoBehaviour
                     dropShipHealth--;
                     if (dropShipHealth <= 0)
                     {
-                        Debug.Log("Dropship dead");
+                        //Debug.Log("Dropship dead");
+                        Destroy(gameObject);
                     }
                 }
             }

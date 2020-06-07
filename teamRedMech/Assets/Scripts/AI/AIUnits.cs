@@ -67,7 +67,8 @@ public class AIUnits : MonoBehaviour
             Debug.Log("Unit " + gameObject + " has been killed");
             if (ItemDrop.Count != 0)
             {
-                Vector3 SpawnPoint = new Vector3(transform.position.x, 1.0f, transform.position.z);
+                GameObject Player = GameObject.FindGameObjectWithTag("Player");
+                Vector3 SpawnPoint = new Vector3(transform.position.x, Player.transform.position.y, transform.position.z);
                 Instantiate(ItemDrop[Random.Range(0, ItemDrop.Count)], SpawnPoint, transform.rotation);
             }
             Destroy(gameObject);
