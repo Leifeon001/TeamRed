@@ -50,7 +50,7 @@ public class MainMenu : MonoBehaviour
     
     public void PlayGame() //Start Playing game
     {
-
+        SceneManager.LoadScene("GameScene");
     }
     public void QuitGame() //Exit game
     {
