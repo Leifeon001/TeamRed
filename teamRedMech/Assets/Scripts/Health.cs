@@ -64,6 +64,10 @@ public class Health : MonoBehaviour
                 {
                     Debug.Log(playerHealth);
                     int temp = playerHealth - 1;
+                    if(temp < 0)
+                    {
+                        temp = 0;
+                    }
                     Lives[temp].SetActive(false);
                     playerHealth--;
                     if (playerHealth <= 0)
