@@ -9,16 +9,25 @@ public class UpgradeMenuUI : MonoBehaviour
     public bool canTurnOn;
 
     public GameObject upgradeMenu;
+    public GameObject popUp;
 
     public Text damageText;
 
+    public Text speedText;
+
+    public Text shieldText;
+
     public BulletSpawner bulletSpawner;
+    public CharacterMovement cMovement;
+    public Health health;
 
     // Start is called before the first frame update
     void Start()
     {
         isMenuOn = false;
         canTurnOn = false;
+
+        popUp.SetActive(false);
 
         upgradeMenu.SetActive(false);
     }
@@ -29,6 +38,10 @@ public class UpgradeMenuUI : MonoBehaviour
         ToggleUpgradeMenu();
 
         DrawDamageCost();
+
+        DrawSpeedCost();
+
+        DrawShieldCost();
     }
 
     public void ToggleUpgradeMenu()
@@ -37,13 +50,13 @@ public class UpgradeMenuUI : MonoBehaviour
         {
             upgradeMenu.SetActive(true);
             isMenuOn = true;
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
         }
         else if (Input.GetKeyDown(KeyCode.I) && isMenuOn && canTurnOn)
         {
             upgradeMenu.SetActive(false);
             isMenuOn = false;
-            Time.timeScale = 1f;
+            //Time.timeScale = 1f;
         }
     }
 
@@ -52,6 +65,8 @@ public class UpgradeMenuUI : MonoBehaviour
         if (other.tag == "UpgradeDock")
         {
             //Debug.Log("Welcome to the upgradebay!");
+
+            popUp.SetActive(true);
 
             canTurnOn = true;
         }
@@ -62,6 +77,8 @@ public class UpgradeMenuUI : MonoBehaviour
     {
         if (other.tag == "UpgradeDock")
         {
+            popUp.SetActive(false);
+
             canTurnOn = false;
         }
 
@@ -83,6 +100,24 @@ public class UpgradeMenuUI : MonoBehaviour
             damageText.text = bulletSpawner.damageUpgradeCost.ToString();
         else if (bulletSpawner.isUsingBullet3)
             damageText.text = "Maxed!"; 
+
+    }
+
+    public void DrawSpeedCost()
+    {
+        if (!cMovement.isUsingSpeed3)
+            speedText.text = cMovement.speedUpgradeCost.ToString();
+        else if (cMovement.isUsingSpeed3)
+            speedText.text = "Maxed!";
+
+    }
+
+    public void DrawShieldCost()
+    {
+        if (!health.shieldUpgrade3)
+            shieldText.text = health.shieldUpgradeCost.ToString();
+        else if (health.shieldUpgrade3)
+            shieldText.text = "Maxed!";
 
     }
 }

@@ -25,6 +25,9 @@ public class BulletSpawner : MonoBehaviour
 
     public GameObject laser;
 
+    public GameObject damageUpgrade2;
+    public GameObject damageUpgrade3;
+
     public Pickup playerPickup;
     public PLaser laserSC;
 
@@ -46,6 +49,9 @@ public class BulletSpawner : MonoBehaviour
         startLaserTimer = false;
 
         isUsingBullet1 = true;
+
+        damageUpgrade2.SetActive(false);
+        damageUpgrade3.SetActive(false);
     }
 
     // Update is called once per frame
@@ -142,6 +148,8 @@ public class BulletSpawner : MonoBehaviour
             isUsingBullet2 = true;
             isUsingBullet3 = false;
 
+            damageUpgrade2.SetActive(true);
+
             damageUpgradeCost++;
         }
         else if (!isUsingBullet1 && isUsingBullet2 && !isUsingBullet3 && pickupAmmount >= damageUpgradeCost)
@@ -151,6 +159,8 @@ public class BulletSpawner : MonoBehaviour
             isUsingBullet1 = false;
             isUsingBullet2 = false;
             isUsingBullet3 = true;
+
+            damageUpgrade3.SetActive(true);
 
             damageUpgradeCost++;
         }
