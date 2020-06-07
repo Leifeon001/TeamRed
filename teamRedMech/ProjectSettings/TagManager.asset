@@ -8,6 +8,7 @@ TagManager:
   - DropShip
   - Enviroment
   - EnemyBullet
+  - UpgradeDock
   layers:
   - Default
   - TransparentFX
